@@ -34,7 +34,7 @@ esbuild.build({
     banner: {
         js: banner,
     },
-    entryPoints: ['src//main.ts'],
+    entryPoints: ['src/main.ts'],
     bundle: true,
     external: ['obsidian'],
     format: 'cjs',
@@ -53,8 +53,8 @@ esbuild.build({
     sourcemap: prod ? false : 'inline',
     treeShaking: true,
     outfile: 'main.js',
-}).catch(() => process.exit(1)).then(() => {
-    console.log("Build done pooo")
+}).catch(() => { 
+    process.exit(1) 
 }).then(() => {
     doCopyFiles();
     process.exit(0); /* Without this process seems to hang after copying files */
